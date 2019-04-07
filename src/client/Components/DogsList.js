@@ -26,9 +26,12 @@ export default class DogsList extends Component {
     this._isMounted = false;
   }
 
+  // Lifecycle method to ensure database is not accessed
+  // until the component is mounted
   componentDidMount() {
     this._isMounted = true;
 
+    // retrieve all instances of Dog from Database
     axios.get('/api/dogs/')
       .then(response => {
         if (this._isMounted) {
@@ -56,7 +59,8 @@ export default class DogsList extends Component {
     // component is being unmounted, ensure setState cannot be run, i.e. when the async axios calls resolve
     this._isMounted = false;
   }
-
+  // cycle through the full list returned from database
+  // and return each entry to be rendered
   dogList() {
     return this.state.dogs.map(function(currentDog, i) {
       return <Dog dog={currentDog} key={i} />;

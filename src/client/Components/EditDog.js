@@ -41,7 +41,8 @@ export default class EditDog extends Component {
   }
 
 
-
+  // Methods that ensure any changes to original
+  // entries are available to state to update the DB
   onChangeBreed(e) {
     this.setState({
       dogs_breed: e.target.value
@@ -90,6 +91,8 @@ export default class EditDog extends Component {
   }
 
   render() {
+    // when the form is submitted the entry
+    // has a record of changed state
     return (
       <div>
         <h3>Update Dogs</h3>

@@ -24,6 +24,7 @@ export default class CreateDog extends Component {
     };
   }
 
+  // Methods to set the state of all properties of Dog
   onChangeBreed(e) {
     this.setState({
       dogs_breed: e.target.value
@@ -50,14 +51,7 @@ export default class CreateDog extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-
-    console.log('Form submitted:');
-    console.log(`Dogs Breed: ${this.state.dogs_breed}`);
-    console.log(`Dogs Group: ${this.state.dogs_group}`);
-    console.log(`Dogs Size: ${this.state.dogs_size}`);
-    console.log(`Dogs Temprement: ${this.state.dogs_temprement}`);
-    console.log(`Dogs Completed: ${this.state.dogs_completed}`);
-
+    // set the state for new Dog entry after form submit
     const newDog = {
       dogs_breed: this.state.dogs_breed,
       dogs_group: this.state.dogs_group,
@@ -79,8 +73,9 @@ export default class CreateDog extends Component {
   }
 
   render() {
+    // return the submitted form
     return (
-  
+
       <div style={{marginTop: 20}}>
         <h3>Add New Dog</h3>
         <form onSubmit={this.onSubmit}>

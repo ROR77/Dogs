@@ -94,7 +94,7 @@ export default class ViewDogGroup extends Component {
           </Dropdown.Menu>
         </Dropdown>
 
-        <h3>Terriers List</h3>
+        <h3>Group List</h3>
         <table className="table table-striped" style={{ marginTop: 20 }}>
           <thead>
             <tr>

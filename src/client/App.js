@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+// import all the components which are used in the app
 import CreateDog from './Components/CreateDog';
 import EditDog from './Components/EditDog';
 import DogsList from './Components/DogsList';
@@ -19,9 +20,6 @@ class App extends Component {
         <div className="container">
 
           <nav className="navbar navbar-expand-lg navbar-light bg-dark">
-            {/* <a className="navbar-brand" href="https://codingthesmartway.com" target="_blank">
-            //   <img src={logo} width="30" height="30" alt="CodingTheSmartWay.com"
-            </a>*/}
             <Link to="/" className="navbar-brand" id ="nav-link">Dogs Great and Small</Link>
             <div className="collpase nav-collapse">
               <ul className="navbar-nav mr-auto">
@@ -44,7 +42,8 @@ class App extends Component {
               </ul>
             </div>
           </nav>
-
+          {/* create all the routes which can be linked to from
+            the navigation */}
           <Route path="/" exact component={DogsList} />
           <Route path="/edit/:id" component={EditDog} />
           <Route path="/create" component={CreateDog} />
